@@ -73,12 +73,14 @@ names(tidy.data)<-gsub(pattern="BodyBody",replacement="Body",names(tidy.data))
 names(tidy.data)<-gsub(pattern="mean",replacement="Mean",names(tidy.data))
 names(tidy.data)<-gsub(pattern="gravity",replacement="Gravity",names(tidy.data))
 names(tidy.data)<-gsub(pattern="angle",replacement="Angle",names(tidy.data))
+names(tidy.data)<-gsub(pattern="^f",replacement="Frequency",names(tidy.data))
+names(tidy.data)<-gsub(pattern="^t",replacement="Time",names(tidy.data))
 tidy.data$Activity<-gsub(pattern="_",replacement="\\.",tidy.data$Activity)
 
 names(tidy.data)
 
 
-#5 From the data set in step 4, creates a second, independent tidy data set with the 
+##5 From the data set in step 4, creates a second, independent tidy data set with the 
 #    average of each variable for each activity and each subject.
 final.data <-
   tidy.data %>%
@@ -86,3 +88,10 @@ final.data <-
   summarise(across(everything(), list(mean)))
 
 final.data
+
+
+## Write table to text file for Github
+write.table(final.data, file='finalData.txt', append = FALSE, 
+            row.names = FALSE, col.names = TRUE)
+?write.table
+
