@@ -3,12 +3,12 @@ Final project for "Getting and Cleaning Data" Coursera course
 
 
 run_analysis.R description:
-- Script goes through 5 steps of course project as described in the review criteria on Coursera
-- Before going through the steps, script sets wd to the root of the unzipped data folder. As long as the unzipped folder in not altered and the wd is set to its root, the script should
+- Script goes through 5 steps of course project as described in the review criteria on Coursera.
+- Before going through the steps, script sets wd to the root of the UCI  data folder. As long as the UCI folder in not altered and the wd is set to its root, the script should
     work.
 - The script then loads the relevant data from the folder: features and activity_labels from the root, and the subject, x and y datasets from both the test and training folders.
-- Once the data is loaded, the script goes through the 5 aforementioned steps.
-- After step 5, save final dataset to wd
+- Once the data is loaded, the script goes through the 5 aforementioned steps as described below.
+- After step 5, saves final dataset to wd.
 
 
 1) Merge Test and Training Datasets to create a single dataset
